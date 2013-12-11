@@ -160,7 +160,7 @@ END
 }
 
 function install_exim4 {
-	check_install mail exim4
+	check_install exim4 exim4
 	if [ -f /etc/exim4/update-exim4.conf.conf ]
 	then
 		sed -i \
