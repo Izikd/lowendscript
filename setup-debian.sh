@@ -242,9 +242,9 @@ function install_mysql {
 # These values override values from /etc/mysql/my.cnf
 
 [mysqld]
-key_buffer = 12M
+key_buffer_size = 12M
 query_cache_size = 0
-table_cache = 32
+table_open_cache = 32
 
 init_connect='SET collation_connection = utf8_unicode_ci'
 init_connect='SET NAMES utf8' 
@@ -253,9 +253,10 @@ collation-server = utf8_unicode_ci
 skip-character-set-client-handshake
 
 default_storage_engine=MyISAM
-skip-innodb
+# skip-innodb
 
-log-slow-queries=/var/log/mysql/slow-queries.log
+slow-query-log = 1
+slow_query_log_file=/var/log/mysql/slow-queries.log
 
 [client]
 default-character-set = utf8
